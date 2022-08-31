@@ -4,11 +4,20 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <canvas class="pie"></canvas>
+        <div id="cake"></div>
         <div class="options-con">
-            <div class="option" id="sample-option">
+            <input type="button" class="option-add" value="Add"/>
+            <div hidden class="option" id="sample-option">
                 <input placeholder="Name" class="option-title"/>
                 <input placeholder="Amount" class="option-value"/>
+                <select name="Color">
+                    <option value="red">Red</option>
+                    <option value="blue">Blue</option>
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="purple">Purple</option>
+                    <option value="gold">Gold</option>
+                </select>
                 <input type="button" class="option-delete" value="Delete"/>
             </div>
         </div>

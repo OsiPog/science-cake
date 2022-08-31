@@ -2,17 +2,31 @@
     font-size: 16px;
 }
 
+[hidden] {
+    display: none !important;
+}
+
+@keyframes appear {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 10rem;
+        opacity: 100%;
+    }
+}
+
 body {
     background-color: gray;
     display: flex;
     flex-direction: row;
 }
 
-.pie {
+#cake {
     border-right-color: darkgray;
     border-right-width: 0.15rem;
     border-right-style: solid;
-    height:100%;
 
     flex: 2;
 }
@@ -26,9 +40,17 @@ body {
     flex: 1;
 }
 
+.option-add {
+    align-self: center;
+    width: 20rem;
+    margin: 0.5rem;
+}
+
 .option {
     display: flex;
     flex-direction: row;
+
+    overflow-y: hidden;
 
     border-width: 0.2rem;
     border-radius: 0.1rem;
@@ -37,6 +59,16 @@ body {
 
     padding: 0.5rem;
     margin-bottom: 0.7rem;
+
+    max-height: 10rem; /* Important for shrinking animation on deletion */
+
+    animation-name: appear;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+
+    transition-property: all;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
 }
 
 .option-title {
